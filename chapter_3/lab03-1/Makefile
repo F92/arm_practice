@@ -7,7 +7,7 @@ COPS += -DCONFIG_BOARD_PI3B
 QEMU_FLAGS  += -machine raspi3
 else ifeq ($(board), rpi4)
 COPS += -DCONFIG_BOARD_PI4B
-QEMU_FLAGS  += -machine raspi4
+QEMU_FLAGS  += -machine raspi4b2g
 endif
 
 COPS += -g -Wall -nostdlib -nostdinc -Iinclude
@@ -44,6 +44,6 @@ benos.bin: $(SRC_DIR)/linker.ld $(OBJ_FILES)
 QEMU_FLAGS  += -nographic
 
 run:
-	qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin
+	/home/ubi/Desktop/qemu-patch-raspberry4/build/qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin
 debug:
-	qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin -S -s
+	/home/ubi/Desktop/qemu-patch-raspberry4/build/qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin -S -s
