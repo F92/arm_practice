@@ -2,12 +2,15 @@
 .global ldr_test
 ldr_test:
 	
-	mov x1,0x80000
-	mov x3,16
-	ldr x0,[x1]
-	ldr x2,[x1,#8]
-	ldr x4,[x1,x3]
-	ldr x5,[x1,x3,lsl #3]
+	
 
 
+
+	ret
+.global m_memcpy
+m_memcpy:
+	mov x0,0x80000
+	mov x1,0x200000
+	ldr x3,[x0]
+	str x3,[x1]
 	ret

@@ -44,6 +44,6 @@ benos.bin: $(SRC_DIR)/linker.ld $(OBJ_FILES)
 QEMU_FLAGS  += -nographic
 
 run:
-	/home/ubi/Desktop/qemu-patch-raspberry4/build/qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin
+	qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin
 debug:
-	/home/ubi/Desktop/qemu-patch-raspberry4/build/qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin -S -s
+	qemu-system-aarch64 $(QEMU_FLAGS) -kernel benos.bin -S -s

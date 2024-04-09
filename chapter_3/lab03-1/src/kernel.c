@@ -15,7 +15,8 @@ void kernel_main(void)
 
 	/* my test*/
 	my_ldr_str_test();
-
+	/*memcpy test*/
+	m_memcpy();
 	while (1) {
 		uart_send(uart_recv());
 	}
